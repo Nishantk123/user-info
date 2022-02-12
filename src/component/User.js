@@ -1,8 +1,18 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { useHistory } from "react-router-dom";
 
 const User = () =>{
     const [userData, setUserData] = useState([])
+    const history = useHistory()
+
+    useEffect(()=>{
+        let token = window.localStorage.getItem("token");
+        console.log(token)
+        if (token === null){
+            history.push("/login")
+        }
+    },[])
 
     useEffect(()=>{
         axios.get("https://reqres.in/api/users")

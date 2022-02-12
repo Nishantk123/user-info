@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useHistory } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const history = useHistory();
 
   const handleEmail = (e) => {
     setEmail(e.target.value);
@@ -22,6 +24,14 @@ const Login = () => {
         method:"POST",
         url:"https://reqres.in/api/login",
         data:data
+    })
+    .then(res=>{
+      console.log(res.data)
+      window.localStorage.setItem("token", res.data.token);
+      history.push("/");
+    })
+    .catch(err =>{
+
     })
   }
 
@@ -44,7 +54,7 @@ const Login = () => {
         />
 
         <div className="text-center">
-          <button className="btn btn-warning" onClick={handleSubmit}>Sign up</button>
+          <button className="btn btn-warning" onClick={handleSubmit}>Sign In</button>
         </div>
       </div>
     </div>

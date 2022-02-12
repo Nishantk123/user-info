@@ -1,6 +1,22 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 
 const Header = () => {
+
+  const history = useHistory();
+
+  const handleLogin = () =>{
+    history.push('/login')
+  }
+  const handleUser = () =>{
+    history.push('/user')
+  }
+  const handleLogout = () =>{
+    window.localStorage.clear()
+    history.push('/login')
+
+  }
+
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-info bg-info">
@@ -27,7 +43,7 @@ const Header = () => {
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <a className="nav-link" href="#" onClick={handleUser}>
                   user
                 </a>
               </li>
@@ -37,8 +53,8 @@ const Header = () => {
                 </a>
               </li>
             </ul>
-            <span className="navbar-text mx-3">Sign in</span>
-            <span className="navbar-text">Sign up</span>
+            <span className="navbar-text mx-3" onClick={handleLogin}>Login</span>
+            <span className="navbar-text" onClick={handleLogout}>Logout</span>
           </div>
         </div>
       </nav>
