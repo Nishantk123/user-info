@@ -53,8 +53,8 @@ const Header = () => {
                 </a>
               </li>
             </ul>
-            <span className="navbar-text mx-3" onClick={handleLogin}>Login</span>
-            <span className="navbar-text" onClick={handleLogout}>Logout</span>
+            <span className="navbar-text mx-3 text-cursor" onClick={handleLogin}>Login</span>
+            <span className="navbar-text text-cursor" onClick={handleLogout}>Logout</span>
           </div>
         </div>
       </nav>

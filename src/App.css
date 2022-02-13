@@ -1,0 +1,11 @@
+.text-cursor{
+    cursor: pointer;
+}
+.img-container{
+    height: 200px;
+    width: 100%;
+}
+.product-image{
+    height: 200px;
+    width: 100%;  
+}
