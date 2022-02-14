@@ -130,6 +130,7 @@ const User = () => {
           </div>
         </div>
       )}
+      {/* close modal */}
     </div>
   );
 };
