@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 
-const User = () => {
+const User = () => {  //function component
   const [userData, setUserData] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [name, setName] = useState("");
